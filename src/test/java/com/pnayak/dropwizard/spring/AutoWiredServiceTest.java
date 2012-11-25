@@ -87,6 +87,15 @@ public class AutoWiredServiceTest {
 		MyResource r = resource.getValue();
 		assertThat(r.getMyService(), not(nullValue()));
 		assertThat(r.getMyService().getMyOtherService(), not(nullValue()));
+		
+		// MyHealthCheck is expected to by Autowired by Spring. The Autowire
+		// annotation is on a class variable and not part of the constructor
+		// like with MyResource above
+		ArgumentCaptor<MyHealthCheck> myHealthCheck = ArgumentCaptor
+				.forClass(MyHealthCheck.class);
+		verify(environment).addHealthCheck(myHealthCheck.capture());
+		assertThat(myHealthCheck.getValue().getMyService(), not(nullValue()));
+
 	}
 	
 //	@Test
