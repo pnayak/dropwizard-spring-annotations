@@ -24,7 +24,8 @@ import com.yammer.metrics.core.HealthCheck;
 
 /**
  * Service which automatically adds items to the service environment, including
- * health checks, resources using Spring @Configuration
+ * health checks, resources using Spring @Configuration and @Component annotated
+ * classes
  * 
  * @author pnayak
  * 
