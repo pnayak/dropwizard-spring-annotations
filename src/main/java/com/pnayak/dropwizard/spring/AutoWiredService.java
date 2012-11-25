@@ -52,7 +52,7 @@ public abstract class AutoWiredService<T extends Configuration> extends
 		this.reflections = new Reflections(configBuilder);
 		
 		this.appContext.scan(basePackages); // let Spring scan for @Configuration classes
-		this.appContext.refresh();
+		//this.appContext.refresh();
 	}
 
 	protected AutoWiredService(String basePackage) {
@@ -69,6 +69,10 @@ public abstract class AutoWiredService<T extends Configuration> extends
 	protected void initializeWithAppContext(T configuration,
 			Environment environment, AnnotationConfigApplicationContext appContext)
 			throws Exception {
+		
+		// Make the Dropwizard configuration available for @Autowired 
+		this.appContext.getBeanFactory().registerSingleton("Configuration", configuration);
+		this.appContext.refresh();
 
 		addResources(environment, appContext);
 		addHealthChecks(environment, appContext);

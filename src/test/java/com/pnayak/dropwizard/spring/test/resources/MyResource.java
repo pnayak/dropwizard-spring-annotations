@@ -7,6 +7,7 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.pnayak.dropwizard.spring.test.SampleServiceConfiguration;
 import com.pnayak.dropwizard.spring.test.service.MyService;
 
 @Component
@@ -14,6 +15,9 @@ import com.pnayak.dropwizard.spring.test.service.MyService;
 public class MyResource {
 
 	private MyService myService;
+	
+	@Autowired
+	private SampleServiceConfiguration configuration;
 	
 	@Autowired
 	public MyResource(MyService myService) {
@@ -29,4 +33,7 @@ public class MyResource {
 		return myService;
 	}
 	
+	public SampleServiceConfiguration getConfiguration() {
+		return configuration;
+	}
 }

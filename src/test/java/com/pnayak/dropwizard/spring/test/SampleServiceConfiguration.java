@@ -13,4 +13,7 @@ public class SampleServiceConfiguration extends Configuration {
 		return foo;
 	}
 	
+	public String getBar() {
+		return "bar";
+	}
 }

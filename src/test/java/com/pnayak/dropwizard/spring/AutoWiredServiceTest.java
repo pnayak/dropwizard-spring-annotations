@@ -3,15 +3,8 @@ package com.pnayak.dropwizard.spring;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 import static org.hamcrest.core.IsNull.nullValue;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,8 +12,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.pnayak.dropwizard.common.resources.CommonResource;
-import com.pnayak.dropwizard.spring.test.MultiPackageService;
 import com.pnayak.dropwizard.spring.test.SampleService;
 import com.pnayak.dropwizard.spring.test.SampleServiceConfiguration;
 import com.pnayak.dropwizard.spring.test.health.MyHealthCheck;
@@ -78,7 +69,7 @@ public class AutoWiredServiceTest {
 	@Test
 	public void testDependenciesWiredUpCorrectly() throws Exception {
 		SampleService s = new SampleService();
-		s.initializeWithBundles(configuration, environment);
+		s.initializeWithBundles(new SampleServiceConfiguration(), environment);
 
 		ArgumentCaptor<MyResource> resource = ArgumentCaptor
 				.forClass(MyResource.class);
@@ -88,6 +79,10 @@ public class AutoWiredServiceTest {
 		assertThat(r.getMyService(), not(nullValue()));
 		assertThat(r.getMyService().getMyOtherService(), not(nullValue()));
 		
+		// Verify that the Dropwizard configuration is Autowired correctly
+		assertThat(r.getConfiguration(), not(nullValue()));
+		assert r.getConfiguration().getBar() == "bar";
+		
 		// MyHealthCheck is expected to by Autowired by Spring. The Autowire
 		// annotation is on a class variable and not part of the constructor
 		// like with MyResource above
@@ -95,7 +90,6 @@ public class AutoWiredServiceTest {
 				.forClass(MyHealthCheck.class);
 		verify(environment).addHealthCheck(myHealthCheck.capture());
 		assertThat(myHealthCheck.getValue().getMyService(), not(nullValue()));
-
 	}
 	
 //	@Test

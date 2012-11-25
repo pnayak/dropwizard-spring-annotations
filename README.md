@@ -5,7 +5,19 @@ This project provides support for integrating Spring with Dropwizard. It was ins
 
 ### Usage
 
-Extend from AutoWiredService<? extends Configuration> rather than Service.  In addition, any Dropwizard Resources, Tasks, HealthChecks and Managed objects also need to be annotated with Spring's @Component annotation. Optionally override createSpringApplicationContext() to provide any of the same Dropwizard objects that require any complicated initializations. Once this is done, all of these DropWizard objects will be able to use Spring's @Autowired annotations for dependency injection! A good use case for this might be to use Spring-Data within your DropWizard objects.
+Extend from AutoWiredService<? extends Configuration> rather than Service.  In addition, any Dropwizard Resources, Tasks, HealthChecks and Managed objects also need to be annotated with Spring's @Component annotation. Optionally override createSpringApplicationContext() in your service to provide any of the same Dropwizard objects that require any complicated initializations. Once this is done, all of these DropWizard objects will be able to use Spring's @Autowired annotations for dependency injection! This includes the ability to auto-wire your Dropwizard configuration into any of your Dropwizard objects.  For e.g.
+```java
+@Component
+@Path("my-resource")
+public class MyResource {
+
+@Autowired
+private SampleServiceConfiguration configuration;
+
+...
+}
+```
+A good use case for this library might be to use Spring-Data within your DropWizard objects.
 
 See the test classes located within src/test/java/com/pnayak/dropwizard/spring/test for an example.
 
