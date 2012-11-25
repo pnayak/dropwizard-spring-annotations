@@ -68,8 +68,6 @@ public abstract class AutoWiredService<T extends Configuration> extends
 			Environment environment, AnnotationConfigApplicationContext appContext)
 			throws Exception {
 
-		//addProviders(environment, appContext);
-		//addInjectableProviders(environment, appContext);
 		addResources(environment, appContext);
 		addHealthChecks(environment, appContext);
 		addTasks(environment, appContext);
@@ -114,25 +112,4 @@ public abstract class AutoWiredService<T extends Configuration> extends
 			LOG.info("Added healthCheck: " + healthCheck);
 		}
 	}
-
-//	@SuppressWarnings("rawtypes")
-//	private void addInjectableProviders(Environment environment,
-//			ApplicationContext appContext) {
-//		Set<Class<? extends InjectableProvider>> injectableProviders = reflections
-//				.getSubTypesOf(InjectableProvider.class);
-//		for (Class<? extends InjectableProvider> injectableProvider : injectableProviders) {
-//			environment.addProvider(appContext.getBean(injectableProvider));
-//			LOG.info("Added injectableProvider: " + injectableProvider);
-//		}
-//	}
-//
-//	private void addProviders(Environment environment,
-//			ApplicationContext appContext) {
-//		Set<Class<?>> providerClasses = reflections
-//				.getTypesAnnotatedWith(Provider.class);
-//		for (Class<?> provider : providerClasses) {
-//			environment.addProvider(appContext.getBean(provider));
-//			LOG.info("Added provider class: " + provider);
-//		}
-//	}
 }
