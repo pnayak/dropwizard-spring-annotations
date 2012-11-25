@@ -51,6 +51,7 @@ public abstract class AutoWiredService<T extends Configuration> extends
 		this.reflections = new Reflections(configBuilder);
 		
 		this.appContext.scan(basePackages); // let Spring scan for @Configuration classes
+		this.appContext.refresh();
 	}
 
 	protected AutoWiredService(String basePackage) {
