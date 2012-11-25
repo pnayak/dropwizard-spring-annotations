@@ -9,7 +9,7 @@ Extend from AutoWiredService<? extends Configuration> rather than Service.  In a
 
 See the test classes located within src/test/java/com/pnayak/dropwizard/spring/test for an example.
 
-This library is available on the public maven repository:
+TODO: I expect to make this library available soon on the public maven repository:
 
     <dependency>
         <groupId>com.pnayak.dropwizard.spring</groupId>
