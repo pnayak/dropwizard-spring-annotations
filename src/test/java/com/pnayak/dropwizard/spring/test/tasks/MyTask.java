@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import com.google.common.collect.ImmutableMultimap;
 import com.yammer.dropwizard.tasks.Task;
 
+@Component
 public class MyTask extends Task {
 
 	public MyTask() {

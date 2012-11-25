@@ -22,25 +22,4 @@ public class SampleServiceConfigModule {
 	public MyService myService() {
 		return new MyService(myOtherService());
 	}
-	
-	@Bean
-	public MyResource myResource() {
-		return new MyResource(myService());
-	}
-	
-	@Bean
-	public MyHealthCheck myHealthCheck() {
-		return new MyHealthCheck();
-	}
-	
-	@Bean
-	public MyTask myTask() {
-		return new MyTask();
-	}
-	
-	@Bean
-	public CommonResource commonResource() {
-		return new CommonResource(myService());
-	}
-
 }
