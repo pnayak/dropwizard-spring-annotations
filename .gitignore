@@ -39,14 +39,3 @@ target/*
 ehthumbs.db
 Icon?
 Thumbs.db
-
-# Test Data #
-#######################
-testdata/*
-*.rdb
-*.htaccess
-
-
-# Temporary hold-off #
-#######################
-sensemaker-pregel/docs/*
