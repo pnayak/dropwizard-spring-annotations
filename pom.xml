@@ -1,112 +1,124 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.fiestacabin.dropwizard.guice</groupId>
-  <artifactId>dropwizard-guice</artifactId>
-  <version>0.5.2-SNAPSHOT</version>
-  <packaging>jar</packaging>
-  
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-  </parent>
-  
-  <name>Guice Extensions for Dropwizard</name>
-  <description>Simple library for using Guice DI in a dropwizard app.</description>
-  <url>https://github.com/jaredstehler/dropwizard-guice</url>
-  
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-  
-  <scm>
-    <connection>scm:git:git@github.com:jaredstehler/dropwizard-guice.git</connection>
-    <developerConnection>scm:git:git@github.com:jaredstehler/dropwizard-guice.git</developerConnection>
-    <url>git@github.com:jaredstehler/dropwizard-guice.git</url>
-  </scm>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pnayak.dropwizard.spring</groupId>
+	<artifactId>dropwizard-spring</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <developers>
-    <developer>
-      <id>jaredstehler</id>
-      <name>Jared Stehler</name>
-      <email>jared.stehler@gmail.com</email>
-    </developer>
-  </developers>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<name>Spring Extensions for Dropwizard</name>
+	<description>Simple library for using Spring Dependency Injection in a dropwizard app.</description>
+	<url>https://github.com/pnayak/dropwizard-spring</url>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.5</version>
-        <configuration>
-          <!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-		<version>1.4</version>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-  
-  <dependencies>
-  	<dependency>
-  		<groupId>com.yammer.dropwizard</groupId>
-  		<artifactId>dropwizard-core</artifactId>
-  		<version>0.5.1</version>
-  	</dependency>
+	<scm>
+		<connection>scm:git:git@github.com:pnayak/dropwizard-spring.git</connection>
+		<developerConnection>scm:git:git@github.com:pnayak/dropwizard-sprng.git</developerConnection>
+		<url>git@github.com:pnayak/dropwizard-spring.git</url>
+	</scm>
 
-	<dependency>
-		<groupId>org.reflections</groupId>
-		<artifactId>reflections</artifactId>
-		<version>0.9.8</version>
-		<exclusions>
-			<exclusion>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-			</exclusion>
-		</exclusions>
-	</dependency>
-	
-	<dependency>
-		<groupId>com.google.inject</groupId>
-		<artifactId>guice</artifactId>
-		<version>3.0</version>
-	</dependency>
-  	
-  	<dependency>
-  		<groupId>junit</groupId>
-  		<artifactId>junit</artifactId>
-  		<version>4.10</version>
-  		<scope>test</scope>
-  	</dependency>
-  	<dependency>
-		<groupId>org.mockito</groupId>
-		<artifactId>mockito-all</artifactId>
-		<version>1.9.0</version>
-		<scope>test</scope>
-	</dependency>
-  </dependencies>
+	<developers>
+		<developer>
+			<id>pnayak</id>
+			<name>Prashant Nayak</name>
+			<email>prashant.v.nayak@gmail.com</email>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>springsource-repo</id>
+			<name>SpringSource Repository</name>
+			<url>http://repo.springsource.org/release</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.yammer.dropwizard</groupId>
+			<artifactId>dropwizard-core</artifactId>
+			<version>0.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.reflections</groupId>
+			<artifactId>reflections</artifactId>
+			<version>0.9.8</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.1.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
+	</dependencies>
 </project>

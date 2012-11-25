@@ -1,0 +1,52 @@
+# Eclipse and mvn build stuff #
+.settings/*
+target/*
+.classpath
+.project
+.jpage
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Test Data #
+#######################
+testdata/*
+*.rdb
+*.htaccess
+
+
+# Temporary hold-off #
+#######################
+sensemaker-pregel/docs/*

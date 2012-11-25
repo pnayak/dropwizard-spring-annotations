@@ -1,18 +1,20 @@
-package com.fiestacabin.dropwizard.guice.test.resources;
+package com.pnayak.dropwizard.spring.test.resources;
 
-import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
-import com.fiestacabin.dropwizard.guice.test.service.MyService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.pnayak.dropwizard.spring.test.service.MyService;
 
 @Path("my-resource")
 public class MyResource {
 
 	private MyService myService;
 	
-	@Inject
+	@Autowired
 	public MyResource(MyService myService) {
 		this.myService = myService;
 	}

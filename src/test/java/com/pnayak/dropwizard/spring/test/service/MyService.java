@@ -1,12 +1,12 @@
-package com.fiestacabin.dropwizard.guice.test.service;
+package com.pnayak.dropwizard.spring.test.service;
 
-import javax.inject.Inject;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class MyService {
 
 	private MyOtherService myOtherService;
 	
-	@Inject
+	@Autowired
 	public MyService(MyOtherService myOtherService) {
 		this.myOtherService = myOtherService;
 	}

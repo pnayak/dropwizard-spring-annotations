@@ -12,7 +12,7 @@ See the test classes located within src/test/java/com/fiestacabin/dropwizard/gui
 This library is available on the public maven repository:
 
     <dependency>
-        <groupId>com.fiestacabin.dropwizard.guice</groupId>
+        <groupId>com.pnayak.dropwizard.spring</groupId>
         <artifactId>dropwizard-guice</artifactId>
         <version>0.5.1</version>
     </dependency>

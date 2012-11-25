@@ -1,6 +1,8 @@
-package com.fiestacabin.dropwizard.guice.test.tasks;
+package com.pnayak.dropwizard.spring.test.tasks;
 
 import java.io.PrintWriter;
+
+import org.springframework.stereotype.Component;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.yammer.dropwizard.tasks.Task;

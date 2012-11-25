@@ -1,4 +1,4 @@
-package com.fiestacabin.dropwizard.guice.test;
+package com.pnayak.dropwizard.spring.test;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 

@@ -1,4 +1,6 @@
-package com.fiestacabin.dropwizard.guice.test.health;
+package com.pnayak.dropwizard.spring.test.health;
+
+import org.springframework.stereotype.Component;
 
 import com.yammer.metrics.core.HealthCheck;
 
