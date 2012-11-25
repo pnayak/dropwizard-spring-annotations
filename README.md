@@ -1,7 +1,7 @@
 Dropwizard-Spring
 =================
 
-This project provides support for integrating Spring with Dropwizard. It was inspired and originally cloned+mirrored from https://github.com/jaredstehler/dropwizard-guice. It uses classpath scanning courtesy of the Reflections project to discover resources to install into the dropwizard environment upon service start.
+This project provides support for integrating Spring with Dropwizard. It was inspired and originally cloned+mirrored from Jared Stehler's dropwizard-guice library - https://github.com/jaredstehler/dropwizard-guice. Like dropwizard-guice, it uses classpath scanning courtesy of the Reflections project to discover Dropwizard objects (Resources, HealthChecks, Tasks and Managed) to install into the Dropwizard environment upon service start.
 
 ### Usage
 
@@ -14,6 +14,6 @@ TODO: I expect to make this library available soon on the public maven repositor
     <dependency>
         <groupId>com.pnayak.dropwizard.spring</groupId>
         <artifactId>dropwizard-spring</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.5.0</version>
     </dependency>
     
