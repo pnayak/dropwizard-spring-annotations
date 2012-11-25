@@ -1,7 +1,7 @@
 Dropwizard-Spring
 =================
 
-This project provides support for integrating Spring with Dropwizard. It uses classpath scanning courtesy of the Reflections project to discover resources to install into the dropwizard environment upon service start.
+This project provides support for integrating Spring with Dropwizard. It was inspired and originally cloned+mirrored from https://github.com/jaredstehler/dropwizard-guice. It uses classpath scanning courtesy of the Reflections project to discover resources to install into the dropwizard environment upon service start.
 
 ### Usage
 
