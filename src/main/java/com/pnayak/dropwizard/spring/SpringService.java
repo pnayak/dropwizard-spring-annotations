@@ -14,14 +14,14 @@ public abstract class SpringService<T extends Configuration> extends Service<T> 
 		super(name);
 		this.appContext = createSpringApplicationContext();
 	}
+	
+	protected AnnotationConfigApplicationContext createSpringApplicationContext() {
+		return new AnnotationConfigApplicationContext();
+	}
 
 	protected void initialize(T configuration, Environment environment)
 			throws Exception {
 		initializeWithAppContext(configuration, environment, appContext);
-	}
-
-	protected AnnotationConfigApplicationContext createSpringApplicationContext() {
-		return new AnnotationConfigApplicationContext();
 	}
 
 	protected abstract void initializeWithAppContext(T configuration,
