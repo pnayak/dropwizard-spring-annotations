@@ -1,19 +1,19 @@
-Dropwizard-Guice
-================
+Dropwizard-Spring
+=================
 
-This project demonstrates a simple method for integrating Guice with Dropwizard. It uses classpath scanning courtesy of the Reflections project to discover resources to install into the dropwizard environment upon service start.
+This project provides support for integrating Spring with Dropwizard. It uses classpath scanning courtesy of the Reflections project to discover resources to install into the dropwizard environment upon service start.
 
 ### Usage
 
-It's simple to use; simple extend from AutoConfigService<? extends Configuration> rather than Service, and optionally override createInjector to provide modules into the guice injector. Now you'll be able to use javax.inject.Inject annotations throughout your project for dependency injection!
+Extend from AutoWiredService<? extends Configuration> rather than Service, and optionally override createSpringApplicationContext() to provide Spring @Configureation classes. Now you'll be able to use Spring @Autowired annotations throughout your project for dependency injection!
 
-See the test classes located within src/test/java/com/fiestacabin/dropwizard/guice/test for an example.
+See the test classes located within src/test/java/com/pnayak/dropwizard/spring/test for an example.
 
 This library is available on the public maven repository:
 
     <dependency>
         <groupId>com.pnayak.dropwizard.spring</groupId>
-        <artifactId>dropwizard-guice</artifactId>
-        <version>0.5.1</version>
+        <artifactId>dropwizard-spring</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
     </dependency>
     
