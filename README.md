@@ -16,9 +16,12 @@ For e.g.
 @Path("my-resource")
 public class MyResource {
 
-    @Autowired
     private SampleServiceConfiguration configuration;
 
+    @Autowired
+    public MyResource(SampleServiceConfiguration configuration) {
+        this.configuration = configuration;
+    }
 ...
 }
 ```

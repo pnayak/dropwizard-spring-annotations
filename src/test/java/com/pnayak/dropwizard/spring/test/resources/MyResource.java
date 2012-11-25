@@ -15,13 +15,12 @@ import com.pnayak.dropwizard.spring.test.service.MyService;
 public class MyResource {
 
 	private MyService myService;
-	
-	@Autowired
 	private SampleServiceConfiguration configuration;
 	
 	@Autowired
-	public MyResource(MyService myService) {
+	public MyResource(MyService myService, SampleServiceConfiguration configuration) {
 		this.myService = myService;
+		this.configuration = configuration;
 	}
 	
 	@GET
