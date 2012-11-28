@@ -1,5 +1,5 @@
-Dropwizard-Spring
-=================
+Dropwizard with Spring Annotations
+==================================
 
 This project provides support for integrating Spring with Dropwizard using annotations (i.e. no Spring XML configuration required). 
 
