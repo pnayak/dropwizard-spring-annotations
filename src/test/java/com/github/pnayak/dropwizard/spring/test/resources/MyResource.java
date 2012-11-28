@@ -1,4 +1,4 @@
-package com.pnayak.dropwizard.spring.test.resources;
+package com.github.pnayak.dropwizard.spring.test.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -7,8 +7,8 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.pnayak.dropwizard.spring.test.SampleServiceConfiguration;
-import com.pnayak.dropwizard.spring.test.service.MyService;
+import com.github.pnayak.dropwizard.spring.test.SampleServiceConfiguration;
+import com.github.pnayak.dropwizard.spring.test.service.MyService;
 
 @Component
 @Path("my-resource")

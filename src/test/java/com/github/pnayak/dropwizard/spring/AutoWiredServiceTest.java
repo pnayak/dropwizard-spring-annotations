@@ -1,4 +1,4 @@
-package com.pnayak.dropwizard.spring;
+package com.github.pnayak.dropwizard.spring;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
@@ -12,11 +12,11 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.pnayak.dropwizard.spring.test.SampleService;
-import com.pnayak.dropwizard.spring.test.SampleServiceConfiguration;
-import com.pnayak.dropwizard.spring.test.health.MyHealthCheck;
-import com.pnayak.dropwizard.spring.test.resources.MyResource;
-import com.pnayak.dropwizard.spring.test.tasks.MyTask;
+import com.github.pnayak.dropwizard.spring.test.SampleService;
+import com.github.pnayak.dropwizard.spring.test.SampleServiceConfiguration;
+import com.github.pnayak.dropwizard.spring.test.health.MyHealthCheck;
+import com.github.pnayak.dropwizard.spring.test.resources.MyResource;
+import com.github.pnayak.dropwizard.spring.test.tasks.MyTask;
 import com.yammer.dropwizard.config.Environment;
 import com.yammer.dropwizard.tasks.Task;
 import com.yammer.metrics.core.HealthCheck;

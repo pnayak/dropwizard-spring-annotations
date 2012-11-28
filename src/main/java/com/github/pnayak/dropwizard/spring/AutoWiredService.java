@@ -1,4 +1,4 @@
-package com.pnayak.dropwizard.spring;
+package com.github.pnayak.dropwizard.spring;
 
 import java.util.Set;
 

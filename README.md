@@ -1,14 +1,21 @@
 Dropwizard-Spring
 =================
 
-This project provides support for integrating Spring with Dropwizard. It was inspired and originally cloned+mirrored from Jared Stehler's dropwizard-guice library - https://github.com/jaredstehler/dropwizard-guice. Like dropwizard-guice, it uses classpath scanning courtesy of the Reflections project to discover Dropwizard objects (Resources, HealthChecks, Tasks and Managed) to install into the Dropwizard environment upon service start.
+This project provides support for integrating Spring with Dropwizard using annotations (i.e. no Spring XML configuration required). 
+
+It was inspired and originally cloned+mirrored from Jared Stehler's dropwizard-guice library - https://github.com/jaredstehler/dropwizard-guice. Like dropwizard-guice, it uses classpath scanning courtesy of the Reflections project to discover Dropwizard objects (Resources, HealthChecks, Tasks and Managed) to install into the Dropwizard environment upon service start.
 
 ### Usage
 
+Following the first two steps below is all you need to do to get this working.
+
 * Extend from AutoWiredService<? extends Configuration> rather than Service  
-* In addition, any Dropwizard Resources, Tasks, HealthChecks and Managed objects also need to be annotated with Spring's @Component annotation
-* Optionally override createSpringApplicationContext() in your service to provide any Dropwizard objects that require any complicated initializations 
-* Once this is done, all of these DropWizard objects will be able to use Spring's @Autowired annotations for dependency injection! This includes the ability to auto-wire your Dropwizard configuration into any of your Dropwizard objects.  
+* In addition, annotate Dropwizard Resources, Tasks, HealthChecks and Managed with Spring's @Component annotation
+* Optionally, override createSpringApplicationContext() in your service class to provide custom initializations for any of your Dropwizard objects 
+
+The nice benefit of doing this is that your DropWizard objects will be able to use Spring's @Autowired annotations for dependency injection.  You can provide any number of configuration classes annotated with Spring's @Configuration annotation in your application.  
+
+In addition, the library also registers the Dropwizard configuration object into Spring's bean registry.  This allows you to auto-wire your Dropwizard configuration into any of your Dropwizard objects.  
 
 For e.g.
 ```java
@@ -27,13 +34,13 @@ public class MyResource {
 ```
 A good use case for this library might be to use Spring-Data within your DropWizard objects.
 
-See the test classes located within src/test/java/com/pnayak/dropwizard/spring/test for an example.
+See the test classes located within src/test/java/com/github/pnayak/dropwizard/spring/test for an example.
 
 TODO: I expect to make this library available soon on the public maven repository:
 
     <dependency>
-        <groupId>com.pnayak.dropwizard.spring</groupId>
-        <artifactId>dropwizard-spring</artifactId>
+        <groupId>com.github.pnayak</groupId>
+        <artifactId>dropwizard-spring-annotations</artifactId>
         <version>0.5.0</version>
     </dependency>
     

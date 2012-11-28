@@ -1,6 +1,6 @@
-package com.pnayak.dropwizard.spring.test;
+package com.github.pnayak.dropwizard.spring.test;
 
-import com.pnayak.dropwizard.spring.AutoWiredService;
+import com.github.pnayak.dropwizard.spring.AutoWiredService;
 
 /**
  * A test service that uses the varargs constructor for AutoConfigService

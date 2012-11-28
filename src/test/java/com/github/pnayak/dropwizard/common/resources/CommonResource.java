@@ -1,4 +1,4 @@
-package com.pnayak.dropwizard.common.resources;
+package com.github.pnayak.dropwizard.common.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -6,7 +6,7 @@ import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.pnayak.dropwizard.spring.test.service.MyService;
+import com.github.pnayak.dropwizard.spring.test.service.MyService;
 
 @Path("common-resource")
 public class CommonResource {

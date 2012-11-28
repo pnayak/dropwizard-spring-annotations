@@ -1,4 +1,4 @@
-package com.pnayak.dropwizard.spring.test.service;
+package com.github.pnayak.dropwizard.spring.test.service;
 
 public class MyOtherService {
 

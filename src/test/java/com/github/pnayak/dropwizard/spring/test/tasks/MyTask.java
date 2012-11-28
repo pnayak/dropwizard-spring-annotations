@@ -1,4 +1,4 @@
-package com.pnayak.dropwizard.spring.test.tasks;
+package com.github.pnayak.dropwizard.spring.test.tasks;
 
 import java.io.PrintWriter;
 

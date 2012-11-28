@@ -1,12 +1,12 @@
-package com.pnayak.dropwizard.spring.test;
+package com.github.pnayak.dropwizard.spring.test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.pnayak.dropwizard.spring.AutoWiredService;
+import com.github.pnayak.dropwizard.spring.AutoWiredService;
 
 public class SampleService extends AutoWiredService<SampleServiceConfiguration> {
 
 	public SampleService() {
-		super("sample-service", "com.pnayak.dropwizard.spring.test");
+		super("sample-service", "com.github.pnayak.dropwizard.spring.test");
 	}
 }

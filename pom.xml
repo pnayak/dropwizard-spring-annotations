@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.pnayak.dropwizard.spring</groupId>
-	<artifactId>dropwizard-spring</artifactId>
+	<groupId>com.github.pnayak</groupId>
+	<artifactId>dropwizard-spring-annotations</artifactId>
 	<version>0.5.0</version>
 	<packaging>jar</packaging>
 
@@ -12,9 +12,9 @@
 		<version>7</version>
 	</parent>
 
-	<name>Spring Extensions for Dropwizard</name>
-	<description>Simple library for using Spring Dependency Injection in a dropwizard app.</description>
-	<url>https://github.com/pnayak/dropwizard-spring</url>
+	<name>Spring Integration with Dropwizard using annotations</name>
+	<description>Simple library for using Spring Dependency Injection in a Dropwizard app.  </description>
+	<url>https://github.com/pnayak/dropwizard-spring-annotations</url>
 
 	<licenses>
 		<license>
@@ -25,9 +25,9 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:git@github.com:pnayak/dropwizard-spring.git</connection>
-		<developerConnection>scm:git:git@github.com:pnayak/dropwizard-sprng.git</developerConnection>
-		<url>git@github.com:pnayak/dropwizard-spring.git</url>
+		<connection>scm:git:git@github.com:pnayak/dropwizard-spring-annotations.git</connection>
+		<developerConnection>scm:git:git@github.com:pnayak/dropwizard-spring-annotations.git</developerConnection>
+		<url>git@github.com:pnayak/dropwizard-spring-annotations.git</url>
 	</scm>
 
 	<developers>
@@ -63,7 +63,7 @@
 				</configuration>
 			</plugin>
 
-      <!--plugin>
+      <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
 				<version>1.4</version>
@@ -76,7 +76,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin-->
+			</plugin>
 		</plugins>
 	</build>
 

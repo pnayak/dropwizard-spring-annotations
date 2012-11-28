@@ -1,9 +1,9 @@
-package com.pnayak.dropwizard.spring.test.health;
+package com.github.pnayak.dropwizard.spring.test.health;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.pnayak.dropwizard.spring.test.service.MyService;
+import com.github.pnayak.dropwizard.spring.test.service.MyService;
 import com.yammer.metrics.core.HealthCheck;
 
 @Component
