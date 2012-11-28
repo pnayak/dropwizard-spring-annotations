@@ -36,7 +36,7 @@ A good use case for this library might be to use Spring-Data within your DropWiz
 
 See the test classes located within src/test/java/com/github/pnayak/dropwizard/spring/test for an example.
 
-TODO: I expect to make this library available soon on the public maven repository:
+To use in your Maven projects:
 
     <dependency>
         <groupId>com.github.pnayak</groupId>
