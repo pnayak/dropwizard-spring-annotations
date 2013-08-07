@@ -3,7 +3,6 @@ package com.github.pnayak.dropwizard.spring;
 import java.util.Set;
 
 import javax.ws.rs.Path;
-import javax.ws.rs.ext.Provider;
 
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
@@ -11,14 +10,13 @@ import org.reflections.scanners.TypeAnnotationsScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
-import org.springframework.context.ApplicationContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.sun.jersey.spi.inject.InjectableProvider;
 import com.yammer.dropwizard.config.Configuration;
 import com.yammer.dropwizard.config.Environment;
 import com.yammer.dropwizard.lifecycle.Managed;
-import com.yammer.dropwizard.logging.Log;
 import com.yammer.dropwizard.tasks.Task;
 import com.yammer.metrics.core.HealthCheck;
 
@@ -33,11 +31,13 @@ import com.yammer.metrics.core.HealthCheck;
 public abstract class AutoWiredService<T extends Configuration> extends
 		SpringService<T> {
 
-	private static final Log LOG = Log.forClass(AutoWiredService.class);
+	private static final Logger LOG = LoggerFactory
+			.getLogger(AutoWiredService.class);
 
 	private Reflections reflections;
 
 	protected AutoWiredService(String name, String... basePackages) {
+		
 		super(name);
 
 		ConfigurationBuilder configBuilder = new ConfigurationBuilder();
@@ -50,9 +50,10 @@ public abstract class AutoWiredService<T extends Configuration> extends
 		configBuilder.filterInputsBy(filterBuilder).setScanners(
 				new SubTypesScanner(), new TypeAnnotationsScanner());
 		this.reflections = new Reflections(configBuilder);
-		
-		this.appContext.scan(basePackages); // let Spring scan for @Configuration classes
-		//this.appContext.refresh();
+
+		this.appContext.scan(basePackages); // let Spring scan for
+											// @Configuration classes
+		// this.appContext.refresh();
 	}
 
 	protected AutoWiredService(String basePackage) {
@@ -66,20 +67,21 @@ public abstract class AutoWiredService<T extends Configuration> extends
 	}
 
 	@Override
-	protected void initializeWithAppContext(T configuration,
-			Environment environment, AnnotationConfigApplicationContext appContext)
-			throws Exception {
-		
-		// Make the Dropwizard configuration available for @Autowired 
-		this.appContext.getBeanFactory().registerSingleton("Configuration", configuration);
+	protected void runWithAppContext(T configuration, Environment environment,
+			AnnotationConfigApplicationContext appContext) throws Exception {
+
+		// Make the Dropwizard configuration available for @Autowired
+		this.appContext.getBeanFactory().registerSingleton("Configuration",
+				configuration);
 		this.appContext.refresh();
 
 		addResources(environment, appContext);
 		addHealthChecks(environment, appContext);
 		addTasks(environment, appContext);
 		addManaged(environment, appContext);
+		addProviders(environment, appContext);
 	}
-	
+
 	private void addResources(Environment environment,
 			AnnotationConfigApplicationContext appContext) {
 		Set<Class<?>> resourceClasses = reflections
@@ -100,12 +102,24 @@ public abstract class AutoWiredService<T extends Configuration> extends
 		}
 	}
 
-	private void addTasks(Environment environment, AnnotationConfigApplicationContext appContext) {
+	private void addTasks(Environment environment,
+			AnnotationConfigApplicationContext appContext) {
 		Set<Class<? extends Task>> taskClasses = reflections
 				.getSubTypesOf(Task.class);
 		for (Class<? extends Task> task : taskClasses) {
 			environment.addTask(appContext.getBean(task));
 			LOG.info("Added task: " + task);
+		}
+	}
+
+	private void addProviders(Environment environment,
+			AnnotationConfigApplicationContext appContext) {
+		Set<Class<?>> providerClasses = reflections
+				.getTypesAnnotatedWith(DWProvider.class);
+		// LOG.info("Found providers: " + providerClasses);
+		for (Class<?> provider : providerClasses) {
+			environment.addProvider(appContext.getBean(provider));
+			LOG.info("Added provider: " + provider);
 		}
 	}
 

@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.pnayak</groupId>
 	<artifactId>dropwizard-spring-annotations</artifactId>
-	<version>0.5.0</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<parent>
@@ -29,6 +29,14 @@
 		<developerConnection>scm:git:git@github.com:pnayak/dropwizard-spring-annotations.git</developerConnection>
 		<url>git@github.com:pnayak/dropwizard-spring-annotations.git</url>
 	</scm>
+	
+	<distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
 	<developers>
 		<developer>
@@ -84,7 +92,12 @@
 		<dependency>
 			<groupId>com.yammer.dropwizard</groupId>
 			<artifactId>dropwizard-core</artifactId>
-			<version>0.5.1</version>
+			<version>0.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yammer.dropwizard</groupId>
+			<artifactId>dropwizard-auth</artifactId>
+			<version>0.6.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.reflections</groupId>

@@ -36,7 +36,7 @@ public class AutoWiredServiceTest {
 	@Test
 	public void testResourcesInstalled() throws Exception {
 		SampleService s = new SampleService();
-		s.initializeWithBundles(configuration, environment);
+		s.run(configuration, environment);
 
 		ArgumentCaptor<MyResource> resource = ArgumentCaptor
 				.forClass(MyResource.class);
@@ -47,7 +47,7 @@ public class AutoWiredServiceTest {
 	@Test
 	public void testHealthChecksInstalled() throws Exception {
 		SampleService s = new SampleService();
-		s.initializeWithBundles(configuration, environment);
+		s.run(configuration, environment);
 
 		ArgumentCaptor<? extends HealthCheck> healthCheck = ArgumentCaptor
 				.forClass(HealthCheck.class);
@@ -58,7 +58,7 @@ public class AutoWiredServiceTest {
 	@Test
 	public void testTasksInstalled() throws Exception {
 		SampleService s = new SampleService();
-		s.initializeWithBundles(configuration, environment);
+		s.run(configuration, environment);
 
 		ArgumentCaptor<? extends Task> task = ArgumentCaptor
 				.forClass(Task.class);
@@ -69,7 +69,7 @@ public class AutoWiredServiceTest {
 	@Test
 	public void testDependenciesWiredUpCorrectly() throws Exception {
 		SampleService s = new SampleService();
-		s.initializeWithBundles(new SampleServiceConfiguration(), environment);
+		s.run(new SampleServiceConfiguration(), environment);
 
 		ArgumentCaptor<MyResource> resource = ArgumentCaptor
 				.forClass(MyResource.class);
