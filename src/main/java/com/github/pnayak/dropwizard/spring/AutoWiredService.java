@@ -87,8 +87,12 @@ public abstract class AutoWiredService<T extends Configuration> extends
 		Set<Class<?>> resourceClasses = reflections
 				.getTypesAnnotatedWith(Path.class);
 		for (Class<?> resource : resourceClasses) {
-			environment.addResource(appContext.getBean(resource));
-			LOG.info("Added resource class: " + resource);
+			if (!resource.getName().equals("com.edappify.resources.websocket.WebSocketResource")) {
+				environment.addResource(appContext.getBean(resource));
+				LOG.info("Added resource class: " + resource);
+			} else {
+				LOG.info("EXCLUDED resource class: " + resource);
+			}
 		}
 	}
 

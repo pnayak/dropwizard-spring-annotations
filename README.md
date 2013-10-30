@@ -1,7 +1,7 @@
 Dropwizard with Spring Annotations
 ==================================
 
-This project provides support for integrating Spring with Dropwizard using annotations (i.e. no Spring XML configuration required). 
+This project provides support for integrating Spring with Dropwizard using annotations (i.e. no Spring XML configuration required). As of now, it supports Dropwizard 0.6+.
 
 It was inspired and originally cloned+mirrored from Jared Stehler's dropwizard-guice library - https://github.com/jaredstehler/dropwizard-guice. Like dropwizard-guice, it uses classpath scanning courtesy of the Reflections project to discover Dropwizard objects (Resources, HealthChecks, Tasks and Managed) to install into the Dropwizard environment upon service start.
 
@@ -41,6 +41,6 @@ To use in your Maven projects:
     <dependency>
         <groupId>com.github.pnayak</groupId>
         <artifactId>dropwizard-spring-annotations</artifactId>
-        <version>0.5.0</version>
+        <version>1.0.0</version>
     </dependency>
     
