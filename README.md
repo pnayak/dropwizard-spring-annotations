@@ -44,3 +44,9 @@ To use in your Maven projects:
         <version>1.0.0</version>
     </dependency>
     
+
+## Copyright & License
+
+(c) Prashant Nayak, 2013-2014.
+
+[Apache Public License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
